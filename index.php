@@ -1,112 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Criminal Gaming</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criminal Gaming</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Segoe UI',sans-serif;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
 
-        body{
-            height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            background:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1920&q=80');
-            background-size:cover;
-            background-position:center;
-            overflow:hidden;
-        }
+body{
+    background:url('https://wallpapercave.com/wp/wp7449740.jpg') no-repeat center center/cover;
+    height:100vh;
+    overflow:hidden;
+}
 
-        .overlay{
-            position:absolute;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            background:rgba(0,0,0,0.65);
-        }
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+}
 
-        .container{
-            position:relative;
-            z-index:1;
-            text-align:center;
-            color:white;
-            padding:50px;
-            border-radius:20px;
-            backdrop-filter:blur(10px);
-            background:rgba(255,255,255,0.08);
-            box-shadow:0 8px 32px rgba(0,0,0,0.4);
-        }
+.container{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+    color:white;
+}
 
-        h1{
-            font-size:4rem;
-            color:#00ffcc;
-            text-shadow:0 0 20px #00ffcc;
-            margin-bottom:20px;
-        }
+h1{
+    font-size:5rem;
+    text-transform:uppercase;
+    color:#ffcc00;
+    text-shadow:
+        0 0 10px #ffcc00,
+        0 0 20px #ffcc00,
+        0 0 40px #ff9900;
+    animation:glow 2s infinite;
+}
 
-        p{
-            font-size:1.3rem;
-            margin-bottom:30px;
-        }
+@keyframes glow{
+    50%{
+        text-shadow:
+        0 0 20px #ffcc00,
+        0 0 40px #ffcc00,
+        0 0 60px #ff6600;
+    }
+}
 
-        .btn{
-            display:inline-block;
-            padding:15px 35px;
-            text-decoration:none;
-            color:white;
-            background:#ff004f;
-            border-radius:50px;
-            font-weight:bold;
-            transition:0.4s;
-        }
+.subtitle{
+    font-size:1.4rem;
+    margin:20px 0;
+    color:#ddd;
+}
 
-        .btn:hover{
-            transform:scale(1.1);
-            box-shadow:0 0 25px #ff004f;
-        }
+.btn{
+    display:inline-block;
+    padding:15px 40px;
+    margin:10px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    transition:.4s;
+}
 
-        .badge{
-            margin-top:20px;
-            color:#ccc;
-            font-size:14px;
-        }
+.play{
+    background:#ff4500;
+    color:white;
+}
 
-        @keyframes glow{
-            0%{text-shadow:0 0 10px #00ffcc;}
-            50%{text-shadow:0 0 30px #00ffcc;}
-            100%{text-shadow:0 0 10px #00ffcc;}
-        }
+.play:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px #ff4500;
+}
 
-        h1{
-            animation:glow 2s infinite;
-        }
-    </style>
+.discord{
+    background:#5865F2;
+    color:white;
+}
+
+.discord:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px #5865F2;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    margin-top:40px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    width:250px;
+    padding:20px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,0.15);
+}
+
+.card h3{
+    color:#ffcc00;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#ddd;
+}
+
+.footer{
+    position:absolute;
+    bottom:20px;
+    color:#aaa;
+    font-size:14px;
+}
+</style>
 </head>
 <body>
 
 <div class="overlay"></div>
 
 <div class="container">
+
     <h1>CRIMINAL GAMING</h1>
 
-    <p>
-        <?php
-            echo "Welcome to Criminal Gaming!";
-        ?>
+    <p class="subtitle">
+        <?php echo "Welcome to Criminal Gaming - Free Fire Community"; ?>
     </p>
 
-    <a href="#" class="btn">Start Gaming</a>
-
-    <div class="badge">
-        Level Up • Compete • Conquer
+    <div>
+        <a href="#" class="btn play">PLAY NOW</a>
+        <a href="#" class="btn discord">JOIN COMMUNITY</a>
     </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🏆 Tournaments</h3>
+            <p>Daily custom rooms and competitive matches.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎮 Squad Up</h3>
+            <p>Find teammates and dominate every battle.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔥 Elite Players</h3>
+            <p>Compete with top Free Fire players.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 Criminal Gaming | Booyah Every Match
+    </div>
+
 </div>
 
 </body>
